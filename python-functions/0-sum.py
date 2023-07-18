@@ -3,7 +3,4 @@ def add(a, b):
     a: any
     b: any
     result = (a + b)
-    print(result)
-
-
-add(5, 5)
+    print(result))
