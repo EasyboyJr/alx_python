@@ -6,7 +6,7 @@ def fibonacci_sequence(n):
         fibonacci_seq.append(next_num)
     if n == 1:
         return [0]
-    elif n == 0:
-        return []
-    else:
+    elif n >= 2:
         return fibonacci_seq
+    else:
+        return []
