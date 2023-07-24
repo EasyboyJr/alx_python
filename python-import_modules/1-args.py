@@ -11,7 +11,7 @@ def main():
         print("arguments",end=".\n")
         return
     else:
-        print("arguments")
+        print("arguments:")
 
     for num, arg in enumerate(arguments, 1):
         print("{}: {}".format(num, arg))
