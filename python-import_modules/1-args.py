@@ -15,9 +15,9 @@ def main():
     else:
         print(".", end="\n")
         return
-    for num in enumerate(arguments, 1):
-        print("{}: {}".format(num, arguments))
+    for num, arg in enumerate(arguments, 1):
+        print("{}: {}".format(num, arg))
 
-        
+
 if __name__ == "__main__":
     main()
