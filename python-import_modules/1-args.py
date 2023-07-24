@@ -8,7 +8,7 @@ def main():
     if argument_number == 1:
         print("argument:")
     elif argument_number == 0:
-        print("arguments",end=".\n")
+        print("arguments", end=".\n")
         return
     else:
         print("arguments:")
@@ -19,3 +19,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
