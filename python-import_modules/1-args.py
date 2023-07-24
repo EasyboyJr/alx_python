@@ -11,8 +11,6 @@ def main():
     else:
         print("arguments:")
     if argument_number > 0:
-        print()
-    else:
         print(".", end="\n")
         return
     for num, arg in enumerate(arguments, 1):
