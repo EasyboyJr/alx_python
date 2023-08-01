@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
 This module calculates the area of a square.
+Methods:
+    __init__: Initialize the object.
+    size: Sets the value of the size of square.
+    area: calculates the area of the square.
 """
 class Square:
     """
@@ -9,25 +13,23 @@ class Square:
         size (int): The size of thr square
     """
     def __init__(self, size=0):
+        """
+        Attributes:
+            self.__size: sets the value for size
+        """
         self.__size = size
-    """
-    Set the value of the size 
-    """
     @property
-    """
-    sets the value
-    """
     def size(self):
         return self.__size
     """
     size.setter: sets and validate the value of the size
     """
     @size.setter
-    """
-    method:
-        size: validates the value of the size
-    """
     def size(self, value):
+        """
+        method:
+            size: validates the value of the size.
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
 
