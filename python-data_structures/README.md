@@ -10,15 +10,15 @@ Data structures in Python are fundamental tools for organizing, storing, and man
 
 + Lists are ordered collections of elements, allowing duplicate values and supporting various data types. They are mutable, meaning elements can be added, modified, or removed after creation.
 
-### 1. Tuples
+### 2. Tuples
 
 + Tuples are similar to lists but are immutable, meaning their elements cannot be changed after creation. They are typically used for fixed collections of items.
 
-### 1. Sets
+### 3. Sets
 
 + Sets are unordered collections of unique elements. They automatically eliminate duplicate values and support set operations like union, intersection, and difference.
 
-### 1. Dictionaries
+### 4. Dictionaries
 
 + Dictionaries are key-value pairs that allow efficient retrieval of values based on their keys. They are useful for representing mappings, databases, and configurations.
 

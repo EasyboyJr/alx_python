@@ -16,7 +16,7 @@ import math
 print(math.sqrt(25))  # Output: 5.0
 ```
 
-### 1. Creating Custom Modules
+### 2. Creating Custom Modules
 + Developers can create their own modules to organize code and promote reusability. A module is a Python file containing functions, classes, or variables.
 * To use a custom module, ensure it is in the same directory or located in a directory listed in Python's search path. Import the module using its file name (without the .py extension) with the `import` statement.
 
@@ -30,7 +30,7 @@ import my_module
 print(my_module.greet("Alice"))  # Output: Hello, Alice!
 ```
 
-### 1.  Importing Specific Items
+### 3.  Importing Specific Items
 
 + You can import specific items (functions, classes, or variables) from a module using the `from` keyword. This way, you can use them directly without the module name prefix.
 
