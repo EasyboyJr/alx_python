@@ -4,6 +4,8 @@ A class BaseGeometry
 Method:
     area: Raises an exeption.
 """
+
+
 class BaseGeometry:
     """
     Do nothing: By passing pass.
@@ -18,7 +20,9 @@ class BaseGeometry:
         """
         Raises an exception.
         """
+        
         raise Exception("area() is not implemented")
+    
     def integer_validator(self, name, value):
         """
         validates the input.
@@ -60,6 +64,7 @@ class Rectangle(BaseGeometry):
         return a formated output
         """
         return ("[Rectangle] {}/{}".format(self.__width, self.__height))
+
 
 class Square(Rectangle):
     """
