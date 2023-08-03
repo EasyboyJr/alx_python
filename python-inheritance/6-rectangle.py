@@ -28,8 +28,6 @@ class BaseGeometry:
             name(string): the name string.
             value(int): must be an integer greater than 0.
         """
-        self.name = name
-        self.value = value
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name)
         if value <= 0:
