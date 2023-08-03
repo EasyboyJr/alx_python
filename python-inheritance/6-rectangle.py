@@ -4,6 +4,8 @@ A class BaseGeometry
 Method:
     area: Raises an exeption.
 """
+
+
 class BaseGeometry:
     """
     Do nothing: By passing pass.
