@@ -11,8 +11,7 @@ class BaseMetaClass(type):
     overrides.
     """
     def __dir__(cls):
-        return [attribute for attribute in super().__dir__() 
-                if attribute != '__init_subclass__']
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
 
 class BaseGeometry(metaclass=BaseMetaClass):
@@ -20,8 +19,7 @@ class BaseGeometry(metaclass=BaseMetaClass):
     Do nothing: By passing pass.
     """
     def __dir__(cls):
-        return [attribute for attribute in super().__dir__() 
-                if attribute != '__init_subclass__']
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
     """
     area: takes in no agument other than self.
     """
@@ -29,8 +27,8 @@ class BaseGeometry(metaclass=BaseMetaClass):
         """
         Raises an exception.
         """
-        
         raise Exception("area() is not implemented")
+    
     def integer_validator(self, name, value):
         """
         validates the input.
@@ -60,11 +58,13 @@ class Rectangle(BaseGeometry):
         self.__height = height
         self.integer_validator("width", width)
         self.integer_validator("height", height)
+    
     def area(self):
         """
         area method: returns width * height
         """
         return self.__width * self.__height
+    
     def __str__(self):
         """
         return a formated output
