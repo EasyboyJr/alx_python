@@ -6,13 +6,19 @@ Method:
 """
 
 
-class BaseGeometry:
+class BaseMetaClass(type):
+    """
+    overrides.
+    """
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+    
+class BaseGeometry(metaclass=BaseMetaClass):
     """
     Do nothing: By passing pass.
     """
-    def __dir__(self):
-        attributes = super().__dir__()
-        return [i for i in attributes if i != '__init_subclass__']
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
     """
     area: takes in no agument other than self.
     """
