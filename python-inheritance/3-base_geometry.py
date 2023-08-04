@@ -3,6 +3,9 @@ An Empty class.
 """
 
 class BaseMetaClass(type):
+    """
+    overrides.
+    """
     def __dir__(cls):
         return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
     
