@@ -7,6 +7,5 @@ class BaseGeometry:
     """
     Do nothing: By passing pass.
     """
-    def __dir__(self):
-        attributes = super().__dir__()
-        return [i for i in attributes if i != '__init_subclass__']
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
