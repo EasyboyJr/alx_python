@@ -28,7 +28,7 @@ class BaseGeometry(metaclass=BaseMetaClass):
         Raises an exception.
         """
         raise Exception("area() is not implemented")
-    
+
     def integer_validator(self, name, value):
         """
         validates the input.
