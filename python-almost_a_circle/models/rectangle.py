@@ -105,6 +105,8 @@ class Rectangle(Base):
     
     def update(self, *args):
         """Update attributes using *args."""
+        if not args:
+            raise ValueError("args should be >= 1")
         if len(args) >= 1:
             id = args[0]
         if len(args) >= 2:
