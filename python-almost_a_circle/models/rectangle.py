@@ -1,5 +1,5 @@
 '''
-Rectangle class: inherits from base class
+Rectangle class: inherits from Base class
 '''
 from base import Base
 
@@ -32,6 +32,9 @@ class Rectangle(Base):
     
     @width.setter
     def width(self, new_width):
+        """
+        Validates width
+        """
         if not isinstance(new_width, int):
             raise TypeError("width must be an integer")
         if new_width <= 0:
@@ -44,6 +47,9 @@ class Rectangle(Base):
     
     @height.setter
     def height(self, new_height):
+        """
+        Validates height
+        """
         if not isinstance(new_height, int):
             raise TypeError("height must be an integer")
         if new_height <= 0:
@@ -56,6 +62,9 @@ class Rectangle(Base):
     
     @x.setter
     def x(self, new_x):
+        """
+        Validates x
+        """
         if not isinstance(new_x, int):
             raise TypeError("x must be an integer")
         if new_x <= 0:
@@ -68,6 +77,9 @@ class Rectangle(Base):
     
     @y.setter
     def y(self, new_y):
+        """
+        Validates y
+        """
         if not isinstance(new_y, int):
             raise TypeError("y must be an integer")
         if new_y <= 0:
