@@ -1,7 +1,7 @@
 '''
 Rectangle class: inherits from base class
 '''
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -59,7 +59,7 @@ class Rectangle(Base):
         if not isinstance(new_x, int):
             raise TypeError("x must be an integer")
         if new_x <= 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         self.__x = new_x
     
     @property
@@ -71,5 +71,5 @@ class Rectangle(Base):
         if not isinstance(new_y, int):
             raise TypeError("y must be an integer")
         if new_y <= 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         self.__y = new_y
