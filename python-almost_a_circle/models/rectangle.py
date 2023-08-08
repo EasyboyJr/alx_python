@@ -4,7 +4,10 @@ inherits from Base class
 '''
 from base import Base
 
-
+"""
+Rectangle class:
+this docstring is not necessary
+"""
 class Rectangle(Base):
     """
     A class representing a rectangle.
