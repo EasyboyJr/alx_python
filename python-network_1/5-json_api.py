@@ -1,33 +1,31 @@
 import requests
 import sys
 
-def main():
-    if len(sys.argv) == 2:
-        letter = sys.argv[1]
-    else:
-        letter = ""
-    
+def send_post_request(url, letter):
     data = {'q': letter}
-    url = 'http://0.0.0.0:5000/search_user'
-    
+    response = requests.post(url, data=data)
+
     try:
-        response = requests.post(url, data=data)
-        try:
-            json_data = response.json()
-            if json_data:
-                user_id = json_data.get('id')
-                user_name = json_data.get('name')
-                if user_id is not None and user_name is not None:
-                    print(f"[{user_id}] {user_name}")
-                else:
-                    print("No result")
-            else:
-                print("No result")
-        except ValueError:
-            print("Not a valid JSON")
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred: {e}")
+        response_json = response.json()
+    except ValueError:
+        # Invalid JSON response
+        return None
 
-if __name__ == "__main__":
-    main()
+    return response_json
 
+if __name__ == '__main__':
+    url = 'http://0.0.0.0:5000/search_user'
+    letter = sys.argv[1] if len(sys.argv) > 1 else ""
+    response_json = send_post_request(url, letter)
+
+    if response_json is None:
+        print("Not a valid JSON")
+    elif isinstance(response_json, dict):
+        if 'id' in response_json and 'name' in response_json:
+            print("[{}] {}".format(response_json['id'], response_json['name']))
+        elif 'message' in response_json:
+            print(response_json['message'])
+        else:
+            print("No result")
+    else:
+        print("Not a valid JSON")

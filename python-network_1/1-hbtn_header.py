@@ -9,7 +9,10 @@ def main():
     url = sys.argv[1]
     req = requests.get(url)
     r = req.headers['X-Requests-Id']
-    print(r)
+    if X-Request-Id is in req.headers:
+        print(r)
+    else:
+        print("unable to fetch Id")
 
 if __name__ =="__main__":
     main()
