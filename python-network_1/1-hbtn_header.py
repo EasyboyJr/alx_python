@@ -8,8 +8,8 @@ import requests
 def main():
     url = sys.argv[1]
     req = requests.get(url)
-    r = req.headers['X-Requests-Id']
     if X-Request-Id is in req.headers:
+        r = req.headers['X-Requests-Id']
         print(r)
     else:
         print("unable to fetch Id")
