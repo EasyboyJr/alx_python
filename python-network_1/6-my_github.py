@@ -11,9 +11,9 @@ def main():
     if response.status_code == 200:
         user_data = response.json()
         user_id = user_data['id']
-        print(f"Your GitHub user ID is: {user_id}")
+        print(f"{user_id}")
     else:
-        print(f"Request failed with status code: {response.status_code}")
+        print("None")
 
 if __name__ == "__main__":
     main()
