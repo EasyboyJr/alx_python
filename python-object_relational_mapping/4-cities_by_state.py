@@ -22,7 +22,12 @@ if __name__ == "__main__":
     cursor = database.cursor()
 
     #execute main task
-    cursor.execute("SELECT * FROM cities ORDER BY id ASC")
+    cursor.execute(
+        """SELECT cities.id, cities.name, states.name
+        FROM cities, states
+        WHERE states.id = state_id
+        ORDER BY cities.id ASC"""
+    )
 
     # return results
     result = cursor.fetchall()
