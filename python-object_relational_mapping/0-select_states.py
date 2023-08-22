@@ -1,7 +1,5 @@
 """
-A script that takes 3 argument: mysql username, 
-mysql password and database name,
-And list all states from the database.
+A script that list all states from a database.
 """
 # import needed modules
 import MySQLdb
@@ -15,7 +13,7 @@ if __name__ == "__main__":
 
     # connect to MySQL
     database = MySQLdb.connect(host='localhost', port=3306, user=user,
-                                passwd=password, db=db_name)
+        passwd=password, db=db_name)
 
     # Create cursor
     cur = database.cursor()
