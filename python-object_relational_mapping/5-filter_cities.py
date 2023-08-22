@@ -29,7 +29,7 @@ if __name__ == "__main__":
     main_query = (
         """SELECT cities.id, cities.name, states.name
         FROM cities INNER JOIN states
-        ON cities.state_id = state.id
+        ON cities.state.id = state_id
         WHERE states.name = %(state_key)s
         ORDER BY cities.id ASC"""
     )
