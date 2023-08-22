@@ -1,5 +1,6 @@
 """
-A script that takes 3 argument: mysql username, mysql password and database name,
+A script that takes 3 argument: mysql username, 
+mysql password and database name,
 And list all states from the database.
 """
 # import needed modules
@@ -13,7 +14,8 @@ if __name__ == "__main__":
     db_name = sys.argv[3]
 
     # connect to MySQL
-    database = MySQLdb.connect(host='localhost', port=3306, user=user, passwd=password, db=db_name)
+    database = MySQLdb.connect(host='localhost', port=3306, user=user,
+                                passwd=password, db=db_name)
 
     # Create cursor
     cur = database.cursor()
@@ -26,7 +28,7 @@ if __name__ == "__main__":
 
     for i in result:
         print(i)
-    
+
     # close connections
     cur.close()
     database.close()
