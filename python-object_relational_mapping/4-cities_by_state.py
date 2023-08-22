@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # create a cursor
     cursor = database.cursor()
 
-    #execute main task
+    # execute main task
     cursor.execute(
         """SELECT cities.id, cities.name, states.name
         FROM cities, states
