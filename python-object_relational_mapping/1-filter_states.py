@@ -22,7 +22,7 @@ if __name__ == "__main__":
     cursor = database.cursor()
 
     # select states that start with N
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name REGEXP '^[N]' ORDER BY id ASC")
 
     # Return results
     result = cursor.fetchall()
