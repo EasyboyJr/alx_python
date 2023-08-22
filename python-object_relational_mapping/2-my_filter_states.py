@@ -1,5 +1,6 @@
 """
- a script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa
+ a script that takes in an argument and displays
+ all values in the states table of hbtn_0e_0_usa
  where name matches the argument.
 """
 # import needed modules
@@ -19,20 +20,21 @@ if __name__ == "__main__":
                                user=user,
                                passwd=password,
                                db=db_name)
-    
+
     # create a cursor
     cursor = database.cursor()
 
     # Execute main task
-    main_query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(searched)
-    cursor.execute(main_query,)
+    main_query = (
+        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(searched))
+    cursor.execute(main_query)
 
     # Return results
     result = cursor.fetchall()
 
     for item in result:
         print(item)
-    
+
     # close connections
     cursor.close()
     database.close()
