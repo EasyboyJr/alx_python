@@ -24,7 +24,7 @@ if __name__ == "__main__":
     cursor = database.cursor()
 
     # Execute main task
-    main_query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC"
+    main_query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(searched)
     cursor.execute(main_query, (searched))
 
     # Return results
