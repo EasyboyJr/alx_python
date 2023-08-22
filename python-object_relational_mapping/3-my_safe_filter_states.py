@@ -29,7 +29,7 @@ if __name__ == "__main__":
     main_query = (
         "SELECT * FROM states WHERE name = %(state_key)s ORDER BY id ASC"
     )
-    cursor.execute(main_query, {'state_key':searched})
+    cursor.execute(main_query, {'state_key': searched})
 
     # Return results
     result = cursor.fetchall()
