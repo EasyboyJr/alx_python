@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     for item in result:
         print(result)
-    
+
     # close connections
     cursor.close()
     database.close()
