@@ -29,7 +29,7 @@ if __name__ == "__main__":
     main_query = (
         "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC"
     )
-    cursor.execute(main_query, (searched))
+    cursor.execute(main_query, (searched.encode('utf-8')))
 
     # Return results
     result = cursor.fetchall()
