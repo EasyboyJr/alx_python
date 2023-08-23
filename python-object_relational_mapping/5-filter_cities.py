@@ -28,8 +28,7 @@ if __name__ == "__main__":
     main_query = "SELECT name\
         FROM cities\
         WHERE state_id = (SELECT id\
-        FROM states WHERE name = %s)\
-        ORDER BY cities.id ASC"
+        FROM states WHERE name = %s)\"
     cursor.execute(main_query, {'state_key': state_name})
 
     # return results
