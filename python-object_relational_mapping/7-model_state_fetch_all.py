@@ -1,6 +1,5 @@
 """
-A script that lists all State objects from a database.
-Database to be entered by user. 
+A script that lists all State objects from a database. 
 """
 # import needed modules
 from sqlalchemy import create_engine
@@ -28,7 +27,7 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id).all()
 
     for item in states:
-        print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(item.id, item.name))
 
     # close session
     session.close()
