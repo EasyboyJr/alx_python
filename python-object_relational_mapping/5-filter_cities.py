@@ -25,13 +25,11 @@ if __name__ == "__main__":
     cursor = database.cursor()
 
     # executing main task
-    main_query = (
-        """SELECT name
-        FROM cities
-        WHERE state_id = (SELECT id
-        FROM states WHERE name = %s)
-        ORDER BY cities.id ASC"""
-    )
+    main_query = SELECT name\
+        FROM cities\
+        WHERE state_id = (SELECT id\
+        FROM states WHERE name = %s)\
+        ORDER BY cities.id ASC"
     cursor.execute(main_query, {'state_key': state_name})
 
     # return results
