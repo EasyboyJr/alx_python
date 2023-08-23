@@ -1,5 +1,6 @@
 """
-A script that lists all State objects that contain the letter a from the database
+A script that lists all State objects that contain
+the letter a from the database
 Database entered by user.
 """
 # import needed modules
@@ -25,11 +26,10 @@ if __name__ == "__main__":
     session = Session
 
     # execute query
-    main_query = session.query(State).filter(State.name.contains('a'))\
-        .order_by(State.id).all()
+    main_query = session.query(State).filter(State.name.contains('a')).order_by(State.id).all()
 
-    for item in main_query:
-        print("{}: {}".format(item.id, item.name))
+    for state in main_query:
+        print("{}: {}".format(state.id, state.name))
 
     # close session
     session.close()
