@@ -1,5 +1,6 @@
 """
-A script that lists all State objects from a database. 
+A script that lists all State objects from a database.
+Database to be entered by user.
 """
 # import needed modules
 from sqlalchemy import create_engine
