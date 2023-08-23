@@ -38,7 +38,7 @@ if __name__ == "__main__":
     result = cursor.fetchall()
 
     for item in result:
-        print(f"{item}" end=", ")
+        print(item)
 
     # close connections
     cursor.close()
