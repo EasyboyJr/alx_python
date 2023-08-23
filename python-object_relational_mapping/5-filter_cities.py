@@ -26,10 +26,10 @@ if __name__ == "__main__":
 
     # executing main task
     main_query = (
-        """SELECT cities.id, cities.name, states.name
-        FROM cities INNER JOIN states
-        ON cities.state.id = state_id
-        WHERE states.name = %(state_key)s
+        """SELECT name
+        FROM cities
+        WHERE state_id = (SELECT id
+        FROM states WHERE name = %s
         ORDER BY cities.id ASC"""
     )
     cursor.execute(main_query, {'state_key': state_name})
