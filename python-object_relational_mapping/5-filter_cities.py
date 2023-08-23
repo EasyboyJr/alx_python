@@ -25,7 +25,7 @@ if __name__ == "__main__":
     cursor = database.cursor()
 
     # executing main task
-    main_query = SELECT name\
+    main_query = "SELECT name\
         FROM cities\
         WHERE state_id = (SELECT id\
         FROM states WHERE name = %s)\
