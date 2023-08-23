@@ -14,13 +14,12 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     # connect to MySQL
-    database = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=user,
-        passwd=password,
-        db=db_name
-    )
+    database = MySQLdb.connect(host='localhost',
+                               port=3306,
+                               user=user,
+                               passwd=password,
+                               db=db_name
+                               )
 
     # create cursor
     cursor = database.cursor()
