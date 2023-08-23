@@ -35,8 +35,11 @@ if __name__ == "__main__":
     # return results
     result = cursor.fetchall()
 
-    for item in result:
-        print(item, end=", ")
+    for index, item in enumerate(result):
+        if (index):
+            print(', ', end="")
+        print(item[0], end="")
+    print()
 
     # close connections
     cursor.close()
