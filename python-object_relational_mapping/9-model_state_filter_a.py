@@ -26,7 +26,7 @@ if __name__ == "__main__":
     session = Session
 
     # execute query
-    main_query = session.query(State).filter(State.name.contains('a'))\
+    main_query = session.query(State).filter(State.name.like('%a%'))\
         .order_by(State.id).all()
 
     for item in main_query:
