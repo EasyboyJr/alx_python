@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     # create session
     Session = sessionmaker(bind=engine)
-    session = Session
+    session = Session()
 
     # execute query
     main_query = session.query(State).filter(State.name.like('%a%'))\
