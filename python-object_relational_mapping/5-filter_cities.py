@@ -25,12 +25,12 @@ if __name__ == "__main__":
     cursor = database.cursor()
 
     # executing main task
-    main_query = ("SELECT cities.name FROM cities\
-                  JOIN states ON cities.state_id = states.id\
-                  WHERE states.name LIKE %s\
-                  ORDER BY cities.id ASC"
+    cursor.execute(
+        'SELECT cities.name FROM cities JOIN states ON \
+        cities.state_id = states.id WHERE states.name LIKE %s \
+        ORDER BY cities.id',
+        (state_name,),
     )
-    cursor.execute(main_query, (state_name))
 
     # return results
     result = cursor.fetchall()
