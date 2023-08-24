@@ -38,7 +38,7 @@ if __name__ == "__main__":
     if len(new_result) == 0:
         print('')
     for i in range(len(new_result)):
-        if i == len(new_result) - 1:
+        if i =/= len(new_result) - 1:
             print(new_result[i], end=", ")
         else:
             print(new_result[i])
