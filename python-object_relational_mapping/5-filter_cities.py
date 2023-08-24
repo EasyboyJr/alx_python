@@ -25,20 +25,20 @@ if __name__ == "__main__":
     cursor = database.cursor()
 
     # executing main task
-    main_query = "SELECT name\
-        FROM cities\
-        WHERE state_id = (SELECT id\
-        FROM states WHERE name = %s)"
-    cursor.execute(main_query, {'state_key': state_name})
+    main_query = ("SELECT cities.name FROM cities\
+                  JOIN states ON cities.state_id = states.id\
+                  WHERE states.name LIKE %s\
+                  ORDER BY cities.id ASC"
+    )
+    cursor.execute(main_query, (state_name))
 
     # return results
     result = cursor.fetchall()
+    list = []
 
-    for index, item in enumerate(result):
-        if (index):
-            print(', ', end="")
-        print(item[0], end="")
-    print()
+    for item in result:
+        list.append(result[0])
+    print(", ".join(list))
 
     # close connections
     cursor.close()
