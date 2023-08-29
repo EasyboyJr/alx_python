@@ -30,7 +30,7 @@ def name(text):
 def default():
     return "Python is cool"
 
-@app.route("/python/(<text>)", strict_slashes=False)
+@app.route("/python/<text>", strict_slashes=False)
 def magic(text):
     new_text = text.replace("_", " ")
     return "Python {}".format(new_text)
