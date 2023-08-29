@@ -2,7 +2,7 @@
 A simple script that starts a flask web application
 """
 # import needed modules
-from flask import Flask
+from flask import Flask, abort
 
 app = Flask(__name__)
 
@@ -40,7 +40,7 @@ def num(n):
     if n.isdigit:
         return "{} is a number".format(n)
     else:
-        return "404", 404
+        abort(404)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
