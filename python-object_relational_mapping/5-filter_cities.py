@@ -34,11 +34,14 @@ if __name__ == "__main__":
 
     # return results
     result = cursor.fetchall()
-    states = []
-
-    for item in result:
-        states.append(result[0])
-    print(", ".join(states))
+    new_result = [','.join(i) for i in result]
+    if len(new_result) == 0:
+        print('')
+    for i in range(len(new_result)):
+        if i != len(new_result) - 1:
+            print(new_result[i], end=", ")
+        else:
+            print(new_result[i])
 
     # close connections
     cursor.close()
