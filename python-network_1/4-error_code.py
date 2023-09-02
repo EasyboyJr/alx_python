@@ -1,20 +1,21 @@
+"""import sys and requests
+    sends a request to the URL
+    check if the staus code is above 400 or not.
 """
-A script that takes in a URL, sends a request to the URL and displays the body of the response.
-"""
-import requests
+
 import sys
+import requests
 
 def main():
     url = sys.argv[1]
+    r = requests.get(url)
 
-    try:
-        response = requests.get(url)
-        print(f"Response body:\n{response.text}")
+    r1 = r.status_code
 
-        if response.status_code >= 400:
-            print(f"Error code: {response.status_code}")
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred: {e}")
+    if r1 >= 400:
+        print("Error code: {}".format(r1))
+    elif r1 < 400:
+        print("Regular request")
 
 if __name__ == "__main__":
     main()
