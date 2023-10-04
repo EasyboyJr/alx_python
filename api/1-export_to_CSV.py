@@ -30,16 +30,16 @@ if __name__ == "__main__":
                 print(f"\t {task['title']}")
         
         # Export data in CSV
-        fileName = '{}.csv'.format(employee_id)
-        with open(fileName, mode='w', newline='') as csv_file:
+        file_name = '{}.csv'.format(employee_id)
+        with open(file_name, mode='w', newline='') as csv_file:
             csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
             # header
-            csv_writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED', 'TASK_TITLE'])
+            csv_writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
 
             # write each csv row
             for task in todos_data:
                 csv_writer.writerow([employee_id, employee_name, task['completed'], task['title']])
-                
+
     else:
         print("Failed to retrieve data. Please check the employee ID and API availability.")
