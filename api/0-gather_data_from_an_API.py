@@ -26,6 +26,6 @@ if __name__ == "__main__":
         
         for task in todos_data:
             if task["completed"]:
-                print(f"\t{task['title']}")
+                print(f"\t {task['title']}")
     else:
         print("Failed to retrieve data. Please check the employee ID and API availability.")
