@@ -3,8 +3,8 @@ A python script that uses the REST API for a given employee ID
 returns information about his/her TODO list progress.
 '''
 # import reqyured modules
-import sys
 import requests
+import sys
 
 id = sys.argv[1]
 
@@ -35,6 +35,6 @@ if todo.status_code == 200 and employee_details.status_code == 200:
 
     for task in todo_data:
         if task['completed']:
-            print('\t{}'.format(task['title']))
+            print('     {}'.format(task['title']))
 else:
     print('couldnt retrieve')
