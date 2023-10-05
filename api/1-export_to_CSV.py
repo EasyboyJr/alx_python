@@ -19,6 +19,7 @@ def main():
         todos_data = json.loads(response_todos.text)
         
         employee_name = user_data.get("name")
+        username = user_data.get('username')
         total_tasks = len(todos_data)
         completed_tasks = sum(1 for task in todos_data if task["completed"])
         
@@ -38,7 +39,7 @@ def main():
 
             # write each csv row
             for task in todos_data:
-                csv_writer.writerow([employee_id, employee_name, task['completed'], task['title']])
+                csv_writer.writerow([employee_id, username, task['completed'], task['title']])
     else:
         print("Failed to retrieve data. Please check the employee ID and API availability.")
 
